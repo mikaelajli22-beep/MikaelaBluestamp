@@ -53,24 +53,79 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
+My project is a biometric health monitor measuring heartrate. It is coded through an arduino and displayed on an LCD. First, I wired the sensor to the arduino. I connected power wire the 3V3 pin on arduino which supplies power to the sensor and helps it turn on. I connected ground wire to GND pin on arduino which completes the circuit and brings electricity back to the arduino after going to the sensor. I connected signal wire to A0 pin on arduino, which sends the signal level or heart rate data from the sensor to the arduino. Then I wired LCD display to arduino. I connected power wire to 5V pin on arduino, which powers the LCD and allows it to turn on. I connected ground wire to GND pin on arduino, which brings electricity back to arduino after going to the LCD. I connected SDA (data line) to A4 pin on arduino, which sends text data to the LCD. I connected SCL(clock line) to A5 pin on arduino, which synchronized timing for the data. I connected arduino to computer then I used an adaptor and connected the arduino to computer after downloading arduino IDE. I added code to arduino IDE. I first downloaded required libraries allowing pre-coded functions to work: one for the pulse sensor and one for the LCDdded constants. Next, I defined the fixed values that the arduino can go back and look at. I added set-up for the sensor and LCD and a loop function to help the monitor run forever. In the loop, there is mechanism to store and check for heartbeats. Finally, I add print code to print heart rate on LCD.
+
+
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
-void setup() {
-  // put your setup code here, to run once:
+// Include necessary libraries
+#define USE_ARDUINO_INTERRUPTS true
+#include <PulseSensorPlayground.h>
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C  lcd(0x27, 16, 2); // set the LCD address to 0x27 for a 16 chars and 2 line display
+ 
+// Constants
+const int PULSE_SENSOR_PIN = 0;  // Analog PIN where the PulseSensor is connected
+const int LED_PIN = 13;          // On-board LED PIN
+const int THRESHOLD = 550;       // Threshold for detecting a heartbeat
+const int INTERVAL = 1000;
+
+// Create PulseSensorPlayground object
+PulseSensorPlayground pulseSensor;
+ 
+void setup()
+{
+  // Initialize Serial Monitor
   Serial.begin(9600);
-  Serial.println("Hello World!");
+  lcd.init();
+  lcd.backlight();
+ 
+  // Configure PulseSensor
+  pulseSensor.analogInput(PULSE_SENSOR_PIN);
+  pulseSensor.blinkOnPulse(LED_PIN);
+  pulseSensor.setThreshold(THRESHOLD);
+  
+  // Check if PulseSensor is initialized
+  if (pulseSensor.begin())
+  {
+    Serial.println("PulseSensor object created successfully!");
+  }
+
+  sensors.begin();
+}
+ 
+void loop()
+{
+
+
+  lcd.setCursor(0, 0);
+  lcd.print("Heart Rate");
+
+  // Get the current Beats Per Minute (BPM)
+  int currentBPM = pulseSensor.getBeatsPerMinute();
+ 
+  // Check if a heartbeat is detected
+  if (pulseSensor.sawStartOfBeat())
+  {
+    Serial.println("♥ A HeartBeat Happened!");
+    Serial.print("BPM: ");
+    Serial.println(currentBPM);
+ 
+    lcd.clear();
+    lcd.setCursor(0, 1);
+    lcd.print("BPM: ");
+    lcd.print(currentBPM);
+
+  // Add a small delay to reduce CPU usage
+  delay(200);
+  }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}
-```
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
