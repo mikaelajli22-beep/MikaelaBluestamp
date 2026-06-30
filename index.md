@@ -70,9 +70,17 @@ Here's where you'll put your code. The syntax below places it into a block of co
 #define USE_ARDUINO_INTERRUPTS true
 #include <PulseSensorPlayground.h>
 #include <LiquidCrystal_I2C.h>
+#include <DallasTemperature.h>
+#include <OneWire.h>
 
-LiquidCrystal_I2C  lcd(0x27, 16, 2); // set the LCD address to 0x27 for a 16 chars and 2 line display
- 
+LiquidCrystal_I2C lcd(0x27, 16, 2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
+
+//variables
+long previousMillis = 0;
+long blinkHeart = 0;
+long currentMillis = 0;
+long buzzerMillis = 0;
+
 // Constants
 const int PULSE_SENSOR_PIN = 0;  // Analog PIN where the PulseSensor is connected
 const int LED_PIN = 13;          // On-board LED PIN
@@ -81,53 +89,135 @@ const int INTERVAL = 1000;
 
 // Create PulseSensorPlayground object
 PulseSensorPlayground pulseSensor;
- 
-void setup()
-{
+
+OneWire oneWire(4);
+DallasTemperature sensors(&oneWire);
+
+void setup() {
   // Initialize Serial Monitor
   Serial.begin(9600);
   lcd.init();
   lcd.backlight();
- 
+
   // Configure PulseSensor
   pulseSensor.analogInput(PULSE_SENSOR_PIN);
   pulseSensor.blinkOnPulse(LED_PIN);
   pulseSensor.setThreshold(THRESHOLD);
-  
+  //setup pin 8 for LED
+  pinMode(8, OUTPUT);
+  digitalWrite(8, LOW);
   // Check if PulseSensor is initialized
-  if (pulseSensor.begin())
-  {
+  if (pulseSensor.begin()) {
     Serial.println("PulseSensor object created successfully!");
   }
+  //rgb light
+
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
 
   sensors.begin();
+
+  pinMode(A3, OUTPUT);
+
+  digitalWrite(A3, LOW);
 }
- 
-void loop()
-{
+
+void loop() {
 
 
   lcd.setCursor(0, 0);
   lcd.print("Heart Rate");
 
+  digitalWrite(8, LOW);
+
   // Get the current Beats Per Minute (BPM)
   int currentBPM = pulseSensor.getBeatsPerMinute();
- 
+
   // Check if a heartbeat is detected
-  if (pulseSensor.sawStartOfBeat())
-  {
+  if (pulseSensor.sawStartOfBeat()) {
+    blinkHeart = 0;
     Serial.println("♥ A HeartBeat Happened!");
     Serial.print("BPM: ");
     Serial.println(currentBPM);
- 
+
     lcd.clear();
     lcd.setCursor(0, 1);
     lcd.print("BPM: ");
     lcd.print(currentBPM);
-
-  // Add a small delay to reduce CPU usage
-  delay(200);
+    lcd.print("  ");
+    lcd.print(sensors.getTempCByIndex(0));
+    lcd.print("C");
   }
+  if ((millis() - blinkHeart) > 200) {
+    lcd.setCursor(0, 0);
+    lcd.print("Heart Rate");
+  }
+  //if (currentBPM < 40 || currentBPM > 100) {
+  //digitalWrite(8, HIGH);
+  //}
+  // Add a small delay to reduce CPU usage
+  // delay(200);
+                  
+  //rgb light
+  if (currentBPM <= 50) {
+    analogWrite(9, 0);
+    analogWrite(10, 0);
+    analogWrite(11, 255);
+    //delay(1000); // Wait for 1000 millisecond(s)
+  }
+  if (currentBPM > 50 && currentBPM < 100) {
+    analogWrite(9, 0);
+    analogWrite(10, 255);
+    analogWrite(11, 0);
+    //delay(1000); // Wait for 1000 millisecond(s)
+  }
+  if (currentBPM >= 100) {
+    analogWrite(9, 255);
+    analogWrite(10, 0);
+    analogWrite(11, 0);
+    //delay(1000); // Wait for 1000 millisecond(s)
+  }
+
+  currentMillis = millis();
+  if (currentMillis - previousMillis >= INTERVAL) {
+    sensors.requestTemperatures();
+    Serial.println("Celsius temperature: ");
+    Serial.println(sensors.getTempCByIndex(0));
+    previousMillis = currentMillis;
+    //delay(1000);
+  }
+
+  //currentBPM > 49 && currentBPM < 51;
+
+  if (currentBPM < 50 || currentBPM > 100) {
+    if ((millis() - buzzerMillis) < 700) { 
+      Serial.println("sdfg");
+      analogWrite(A3, 130); }
+    //analogWrite(A3, 130);
+    else if ((millis() - buzzerMillis) < 1400) {
+      Serial.println("hi");
+      analogWrite(A3, 0);
+    } 
+    else {
+      buzzerMillis = millis();
+    }
+    currentBPM = pulseSensor.getBeatsPerMinute();
+    //  lcd.clear();
+  }
+
+  if (currentBPM >= 50 && currentBPM <= 100) {
+    analogWrite(A3, 0);
+  }
+
+  //if (currentBPM < 100) {
+  // analogWrite(A3, 150);
+  //}
+
+  //currentBPM > 99 && currentBPM < 101;
+
+  // 1 < currentBPM && 1 < 1;
+  delay(10);
 }
 ```
 
