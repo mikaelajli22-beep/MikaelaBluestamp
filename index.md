@@ -19,7 +19,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=wPDK3R-Wfns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
@@ -45,7 +45,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=LMOpLYTjThU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
@@ -55,6 +55,18 @@ For your first milestone, describe what your project is and how you plan to buil
 
 My project is a biometric health monitor measuring heartrate. It is coded through an arduino and displayed on an LCD. First, I wired the sensor to the arduino. I connected power wire the 3V3 pin on arduino which supplies power to the sensor and helps it turn on. I connected ground wire to GND pin on arduino which completes the circuit and brings electricity back to the arduino after going to the sensor. I connected signal wire to A0 pin on arduino, which sends the signal level or heart rate data from the sensor to the arduino. Then I wired LCD display to arduino. I connected power wire to 5V pin on arduino, which powers the LCD and allows it to turn on. I connected ground wire to GND pin on arduino, which brings electricity back to arduino after going to the LCD. I connected SDA (data line) to A4 pin on arduino, which sends text data to the LCD. I connected SCL(clock line) to A5 pin on arduino, which synchronized timing for the data. I connected arduino to computer then I used an adaptor and connected the arduino to computer after downloading arduino IDE. I added code to arduino IDE. I first downloaded required libraries allowing pre-coded functions to work: one for the pulse sensor and one for the LCDdded constants. Next, I defined the fixed values that the arduino can go back and look at. I added set-up for the sensor and LCD and a loop function to help the monitor run forever. In the loop, there is mechanism to store and check for heartbeats. Finally, I add print code to print heart rate on LCD.
 
+
+# Starter Project
+
+**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=TlzVSYYXwzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
+- Technical details of what you've accomplished and how they contribute to the final goal
+- What has been surprising about the project so far
+- Previous challenges you faced that you overcame
+- What needs to be completed before your final milestone 
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
