@@ -35,7 +35,8 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=wPDK3R-Wfns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For my second milestone, I added three modifications: an RGB LED light, a temperature sensor, and a buzzer.
+
+For my second milestone, I added three modifications: an RGB LED light, a temperature sensor, and a beeping device.
 
 My first modification was an LED rgb. Its function is to indicate whether the heart rate is in a healthy or unhealthy range. I set the healthy range for resting heart rate as 50-100 beats per minute. If the heart rate detected from the sensor falls below the healthy range, the light will turn blue. If it is within the healthy range, the light will turn green. If it is above the healthy range, it will turn red. I did this by wiring the LED to three different pins, one for each color. I also had to add a resistor onto each wire. For the code, I used 3 if-statements to turn the light bulb on depending on the heartrate detected. To decide what color to turn the light bulb in each interval, I input RGB number. This is where I faced some difficulty, as the light bulb kept turned weird colors or had the wrong color for the wrong intervals. I realized to get the right color, I had to have the RGB coordinates the most extreme for each color. I figured everything out after tinkering with it for a little.
 
