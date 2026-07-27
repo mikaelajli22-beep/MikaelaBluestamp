@@ -1,11 +1,5 @@
 # Biometric Health Monitor
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
-
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
+My project is a biomentric health monitor. What it does is take and display the user's heart rate and body temperature, notifying if the user's data enters dangerous or unhealthy zones.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -17,21 +11,13 @@ You should comment out all portions of your portfolio that you have not complete
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="560" height="315" src="https://www.youtube.com/watch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together.
 
-
+![Headstone Image](tinkercad2.png)
 
 # Second Milestone
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=wPDK3R-Wfns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -40,11 +26,14 @@ For my second milestone, I added three modifications: an RGB LED light, a temper
 
 My first modification was an LED rgb. Its function is to indicate whether the heart rate is in a healthy or unhealthy range. I set the healthy range for resting heart rate as 50-100 beats per minute. If the heart rate detected from the sensor falls below the healthy range, the light will turn blue. If it is within the healthy range, the light will turn green. If it is above the healthy range, it will turn red. I did this by wiring the LED to three different pins, one for each color. I also had to add a resistor onto each wire. For the code, I used 3 if-statements to turn the light bulb on depending on the heartrate detected. To decide what color to turn the light bulb in each interval, I input RGB number. This is where I faced some difficulty, as the light bulb kept turned weird colors or had the wrong color for the wrong intervals. I realized to get the right color, I had to have the RGB coordinates the most extreme for each color. I figured everything out after tinkering with it for a little.
 
-My second modification was adding a device that beeps whenever the heart rate enters
+My second modification was adding a device that beeps whenever the heart rate enters danger zones. I connected the device using the breadboard I coded the buzzer to beep once per second for half a second using an if function and delay.
+
+My third modification was adding at temperature sensor to the monitor. I connected the sensor using the breadboard and coded it to collect temperature data once per second and update it on the LCD. I had to download dallastemperature library to get the data. 
+
+I faces some challenges while coding the buzzer and temperature sensor. Originally, I was using if statements and delays to get all the timing right for the beeping and temperature update. For some reason, the delays were interfering with each other and there was inaccuracies. To fix this, I used the millis() function instead to get get the buzzer to beep one interval off and one on, and the temperature sensor to update once per second.
 
 # First Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=LMOpLYTjThU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -66,7 +55,6 @@ My project is a biometric health monitor measuring heartrate. It is coded throug
 For my starter project I made the jitterbug. The main skill used for this project was soldering. blah blah...
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 ![Headstone Image](tinkercad2.png)
 *Model uses temperature sensor in place of heartrate sensor. Both 3 pronged sensor, so the wiring is the same.
