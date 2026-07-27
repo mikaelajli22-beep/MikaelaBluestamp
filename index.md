@@ -13,7 +13,7 @@ My project is a biomentric health monitor. What it does is take and display the 
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together.
+For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together. A challenge I faced was during the process of CADing the box. It was difficult to get exact measurements for the cut outs and estimating how well the wiring would fit. I overcame this simple through time and patience.
 
 ![Headstone Image](cad.png)
 
@@ -52,7 +52,7 @@ My project is a biometric health monitor measuring heartrate. It is coded throug
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=TlzVSYYXwzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For my starter project I made the jitterbug. The main skill used for this project was soldering. blah blah...
+For my starter project I made the jitterbug. The main skill used for this project was soldering. The intructions were simple, I just solders the wiring and LED onto the jitterbug, then turned the battery powered buzzer on and the bug shook/jittered. I had some difficulty during the soldering process as I had never done it before. I kept accidentally creating short circuits and had to remove solder often.
 
 # Schematics 
 
