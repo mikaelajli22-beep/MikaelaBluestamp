@@ -15,7 +15,7 @@ My project is a biomentric health monitor. What it does is take and display the 
 
 For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together.
 
-![Headstone Image](cad)
+![Headstone Image](cad.png)
 
 # Second Milestone
 
