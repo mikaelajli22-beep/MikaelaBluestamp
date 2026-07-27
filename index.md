@@ -5,8 +5,6 @@ My project is a biomentric health monitor. What it does is take and display the 
 |:--:|:--:|:--:|:--:|
 | Mikaela Li | Saint Francis High School | Biomedical Engineering | Incoming Senior
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
-
 ![Headstone Image](logo.svg)
   
 # Final Milestone
@@ -17,7 +15,7 @@ For my final milestone, I put everything together through transferring my wiring
 
 ![Headstone Image](cad.png)
 
-# Second Milestone
+# Second Milestone 
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=wPDK3R-Wfns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -33,7 +31,6 @@ My third modification was adding at temperature sensor to the monitor. I connect
 I faces some challenges while coding the buzzer and temperature sensor. Originally, I was using if statements and delays to get all the timing right for the beeping and temperature update. For some reason, the delays were interfering with each other and there was inaccuracies. To fix this, I used the millis() function instead to get get the buzzer to beep one interval off and one on, and the temperature sensor to update once per second.
 
 # First Milestone
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=LMOpLYTjThU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
