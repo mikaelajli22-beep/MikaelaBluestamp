@@ -10,7 +10,7 @@ My project is a biomentric health monitor. What it does is take and display the 
 VIDEO DEMO:
 <iframe width="560" height="315" src="https://www.youtube.com/watch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 https://www.youtube.com/watch
-EXPLAIN:
+
 
 For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together. A challenge I faced was during the process of CADing the box. It was difficult to get exact measurements for the cut outs and estimating how well the wiring would fit. I overcame this simple through time and patience.
 
