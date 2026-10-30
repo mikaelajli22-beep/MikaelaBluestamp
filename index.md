@@ -7,9 +7,9 @@ My project is a biomentric health monitor. What it does is take and display the 
   
 # Final Milestone
 
-VIDEO DEMO:
+VIDEO DEMO: https://www.youtube.com/watch
 <iframe width="560" height="315" src="https://www.youtube.com/watch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-https://www.youtube.com/watch
+
 
 
 EXPLAIN: For my final milestone, I put everything together through transferring my wiring from breadboard to perfboard and putting everything into a box. I soldered all myy wiring into a perfboard for spacial efficiency, and I CADed a box for my device to go into. I designed my box on onshape, cutting out areas that parts stick out of, and 3d printed the box. Lastly, I hot glued the box together. A challenge I faced was during the process of CADing the box. It was difficult to get exact measurements for the cut outs and estimating how well the wiring would fit. I overcame this simple through time and patience.
@@ -17,9 +17,9 @@ EXPLAIN: For my final milestone, I put everything together through transferring 
 ![Headstone Image](cad.png)
 
 # Second Milestone 
-VIDEO DEMO:
+VIDEO DEMO: https://www.youtube.com/watch?v=wPDK3R-Wfns
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=wPDK3R-Wfns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-https://www.youtube.com/watch?v=wPDK3R-Wfns
+
 
 EXPLAIN: For my second milestone, I added three modifications: an RGB LED light, a temperature sensor, and a beeping device.
 
@@ -33,16 +33,16 @@ I faces some challenges while coding the buzzer and temperature sensor. Original
 
 # First Milestone
 
-VIDEO DEMO:
+VIDEO DEMO: https://www.youtube.com/watch?v=LMOpLYTjThU
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=LMOpLYTjThU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-https://www.youtube.com/watch?v=LMOpLYTjThU
+
 EXPLAIN: My project is a biometric health monitor measuring heartrate. It is coded through an arduino and displayed on an LCD. First, I wired the sensor to the arduino. I connected power wire the 3V3 pin on arduino which supplies power to the sensor and helps it turn on. I connected ground wire to GND pin on arduino which completes the circuit and brings electricity back to the arduino after going to the sensor. I connected signal wire to A0 pin on arduino, which sends the signal level or heart rate data from the sensor to the arduino. Then I wired LCD display to arduino. I connected power wire to 5V pin on arduino, which powers the LCD and allows it to turn on. I connected ground wire to GND pin on arduino, which brings electricity back to arduino after going to the LCD. I connected SDA (data line) to A4 pin on arduino, which sends text data to the LCD. I connected SCL(clock line) to A5 pin on arduino, which synchronized timing for the data. I connected arduino to computer then I used an adaptor and connected the arduino to computer after downloading arduino IDE. I added code to arduino IDE. I first downloaded required libraries allowing pre-coded functions to work: one for the pulse sensor and one for the LCDdded constants. Next, I defined the fixed values that the arduino can go back and look at. I added set-up for the sensor and LCD and a loop function to help the monitor run forever. In the loop, there is mechanism to store and check for heartbeats. Finally, I add print code to print heart rate on LCD.
 
 
 # Starter Project
-VIDEO DEMO:
+VIDEO DEMO: https://www.youtube.com/embed/TlzVSYYXwzc?si=-BaKFrvIl_7s2ym0
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TlzVSYYXwzc?si=-BaKFrvIl_7s2ym0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-https://www.youtube.com/embed/TlzVSYYXwzc?si=-BaKFrvIl_7s2ym0
+
 EXPLAIN: For my starter project I made the jitterbug. The main skill used for this project was soldering. The intructions were simple, I just solders the wiring and LED onto the jitterbug, then turned the battery powered buzzer on and the bug shook/jittered. I had some difficulty during the soldering process as I had never done it before. I kept accidentally creating short circuits and had to remove solder often.
 
 # Schematics 
